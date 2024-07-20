@@ -1,0 +1,26 @@
+Exception occurred while processing element: Message: element click intercepted: Element <button type="button" class="Modal_modal__close_modified__3V5XS Modal_modal__close__TnseK">...</button> is not clickable at point (906, 123). Other element would receive the click: <div class="Modal_modal_overlay__x2ZCr"></div>
+  (Session info: chrome=126.0.6478.183)
+Stacktrace:
+0   chromedriver                        0x000000010506ea0c chromedriver + 4385292
+1   chromedriver                        0x0000000105067318 chromedriver + 4354840
+2   chromedriver                        0x0000000104c84b0c chromedriver + 281356
+3   chromedriver                        0x0000000104cccce0 chromedriver + 576736
+4   chromedriver                        0x0000000104ccb284 chromedriver + 569988
+5   chromedriver                        0x0000000104cc9414 chromedriver + 562196
+6   chromedriver                        0x0000000104cc85b0 chromedriver + 558512
+7   chromedriver                        0x0000000104cbdcfc chromedriver + 515324
+8   chromedriver                        0x0000000104cbd734 chromedriver + 513844
+9   chromedriver                        0x0000000104cffd24 chromedriver + 785700
+10  chromedriver                        0x0000000104cbbeec chromedriver + 507628
+11  chromedriver                        0x0000000104cbc8c4 chromedriver + 510148
+12  chromedriver                        0x00000001050363c8 chromedriver + 4154312
+13  chromedriver                        0x000000010503ae2c chromedriver + 4173356
+14  chromedriver                        0x000000010501bf84 chromedriver + 4046724
+15  chromedriver                        0x000000010503b718 chromedriver + 4175640
+16  chromedriver                        0x000000010500ef44 chromedriver + 3993412
+17  chromedriver                        0x00000001050591a8 chromedriver + 4297128
+18  chromedriver                        0x0000000105059324 chromedriver + 4297508
+19  chromedriver                        0x0000000105066f10 chromedriver + 4353808
+20  libsystem_pthread.dylib             0x0000000184b33034 _pthread_start + 136
+21  libsystem_pthread.dylib             0x0000000184b2de3c thread_start + 8
+
