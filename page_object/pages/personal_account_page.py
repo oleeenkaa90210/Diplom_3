@@ -16,21 +16,16 @@ class PersonalAccountPage(BasePage):
 
     def click_to_login_button(self):
         self.click_to_element(PersonalAccountLocators.LOGIN_BUTTON)
+        self.wait_new_url(Urls.SERVER_URL)
 
     def click_to_personal_account(self):
         self.click_to_element(PersonalAccountLocators.PERSONAL_ACCOUNT)
-
-    def wait_personal_profile_page(self):
         self.wait_new_url(Urls.PERSONAL_ACCOUNT_PROFILE_PAGE)
 
     def click_to_order_history_button(self):
         self.click_to_element(PersonalAccountLocators.ORDER_HISTORY_BUTTON)
-
-    def wait_order_history_page(self):
         self.wait_new_url(Urls.ORDER_HISTORY_PAGE)
 
     def click_to_logout_button(self):
         self.click_to_element(PersonalAccountLocators.LOGOUT_BUTTON)
-
-    def wait_login_page(self):
         self.wait_new_url(Urls.LOGIN_PAGE)

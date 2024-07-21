@@ -1,6 +1,8 @@
 import pytest
 from selenium import webdriver
 
+from page_object.data import Urls
+
 
 def pytest_addoption(parser):
     parser.addoption(
@@ -24,7 +26,7 @@ def driver(request):
 
 @pytest.fixture
 def open_stellar_burgers(driver):
-    driver.get("https://stellarburgers.nomoreparties.site/")
+    driver.get(Urls.SERVER_URL)
 
 # pytest #запуск в Chrome
 # pytest -s page_object/tests/ --browser firefox #запуск в Firefox

@@ -15,6 +15,8 @@ class OrderFeedLocators:
     TEXT_COUNTER_FOR_DAY = (By.XPATH, "//p[contains(@class, 'text_type_main-medium') and text()='Выполнено за "
                                       "сегодня:']")
     ORDER_IN_PROGRESS = (By.CSS_SELECTOR, '.OrderFeed_orderListReady__1YFem.OrderFeed_orderList__cBvyi li')
+    CLASS_MODAL_OPENED = 'Modal_modal_opened__3ISw4'
+    ORDERS_NUMBERS = (By.CSS_SELECTOR, 'li.OrderHistory_listItem__2x95r')
 
 
 

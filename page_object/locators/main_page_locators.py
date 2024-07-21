@@ -17,7 +17,6 @@ class MainPageLocators:
     ORDER_BUTTON = (By.CSS_SELECTOR, "button.button_button__33qZ0.button_button_type_primary__1O7Bx"
                                      ".button_button_size_large__G21Vg")
     MODAL_ORDER = (By.CSS_SELECTOR, "section.Modal_modal_opened__3ISw4")
-    ORDER_ID = (By.CSS_SELECTOR, "h2.Modal_modal__title__2L34m")
     ORDER_NUMBER = (By.CLASS_NAME, 'Modal_modal__title__2L34m')
 
 

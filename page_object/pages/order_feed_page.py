@@ -9,8 +9,6 @@ class OrderFeedPage(BasePage):
 
     def click_to_order_feed(self):
         self.click_to_element(OrderFeedLocators.ORDER_FEED)
-
-    def wait_order_feed_page(self):
         self.wait_new_url(Urls.ORDER_FEED_PAGE)
 
     def click_on_any_order(self):
@@ -18,15 +16,12 @@ class OrderFeedPage(BasePage):
 
     def is_order_modal_open(self):
         element = self.find_element_with_wait(OrderFeedLocators.MODAL_OPENED)
-        has_class = 'Modal_modal_opened__3ISw4' in element.get_attribute('class')
+        has_class = OrderFeedLocators.CLASS_MODAL_OPENED in element.get_attribute('class')
         return has_class
 
     def get_my_order(self):
         order_texts = self.extract_order_texts(OrderFeedLocators.ORDER_HISTORY, OrderFeedLocators.ORDER_ITEMS)
-        if order_texts:
-            return order_texts[-1]
-        else:
-            return None
+        return order_texts[-1]
 
     def get_order_feeds(self):
         return self.extract_order_texts(OrderFeedLocators.ORDER_FEEDS, OrderFeedLocators.ORDER_ITEMS)
@@ -34,7 +29,7 @@ class OrderFeedPage(BasePage):
     def extract_order_texts(self, container_selector, item_selector):
         order_texts = []
         container = self.find_element_with_wait(container_selector)
-        items = container.find_elements(By.CSS_SELECTOR, 'li.OrderHistory_listItem__2x95r')
+        items = container.find_elements(*OrderFeedLocators.ORDERS_NUMBERS)
         for item in items:
             text_element = item.find_element(*item_selector)
             order_texts.append(text_element.text)
@@ -46,18 +41,14 @@ class OrderFeedPage(BasePage):
 
     def go_to_main_page(self):
         self.click_to_element(OrderFeedLocators.CONSTRUCTION)
+        self.wait_new_url(Urls.SERVER_URL)
 
     def get_counter_completed_for_day(self):
-        try:
-            counter = self.find_element_with_wait(OrderFeedLocators.TEXT_COUNTER_FOR_DAY)
-            а = counter.text
-            parent_counter = counter.find_element(*MainPageLocators.PARENT)
-            order_feed_number_element = parent_counter.find_element(*OrderFeedLocators.COUNTER_COMPLETED)
+        counter = self.find_element_with_wait(OrderFeedLocators.TEXT_COUNTER_FOR_DAY)
+        parent_counter = counter.find_element(*MainPageLocators.PARENT)
+        order_feed_number_element = parent_counter.find_element(*OrderFeedLocators.COUNTER_COMPLETED)
 
-            return order_feed_number_element.text
-        except Exception as e:
-            print(f"NoSuchElementException: {e}")
-            return None
+        return order_feed_number_element.text
 
     def get_order_numbers_in_progress(self):
         order_numbers_in_progress = []

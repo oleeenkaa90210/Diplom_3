@@ -10,18 +10,15 @@ class TestMainPage:
     def test_go_to_construction(self, driver, open_stellar_burgers):
         main_page = MainPage(driver)
         main_page.click_to_order_feed()
-        main_page.wait_order_feed_page()
         main_page.click_on_construction()
-        main_page.wait_main_page()
 
         current_url = driver.current_url
-        assert current_url == Urls.MAIN_PAGE
+        assert current_url == Urls.SERVER_URL
 
     @allure.title('Переход по клику на «Лента заказов»')
     def test_go_to_order_feed(self, driver, open_stellar_burgers):
         main_page = MainPage(driver)
         main_page.click_to_order_feed()
-        main_page.wait_order_feed_page()
 
         current_url = driver.current_url
         assert current_url == Urls.ORDER_FEED_PAGE
@@ -31,7 +28,6 @@ class TestMainPage:
         main_page = MainPage(driver)
         main_page.scroll_to_ingredient()
         main_page.click_to_ingredient()
-        main_page.wait_modal_page()
 
         assert main_page.is_modal_opened()
 
@@ -40,7 +36,6 @@ class TestMainPage:
         main_page = MainPage(driver)
         main_page.scroll_to_ingredient()
         main_page.click_to_ingredient()
-        main_page.wait_modal_page()
         main_page.click_to_close_modal()
 
         assert main_page.is_modal_closed()
@@ -63,12 +58,10 @@ class TestMainPage:
         personal_account_page.add_email()
         personal_account_page.add_password()
         personal_account_page.click_to_login_button()
-        main_page.wait_main_page()
         main_page.scroll_to_ingredient()
         main_page.add_ingredient_to_order()
         main_page.add_bun_to_order()
         main_page.checkout()
-        main_page.wait_for_order_modal()
 
         assert main_page.verify_order_modal()
 

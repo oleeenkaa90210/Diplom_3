@@ -12,7 +12,6 @@ class TestPersonalAccount:
         personal_account_page.add_password()
         personal_account_page.click_to_login_button()
         personal_account_page.click_to_personal_account()
-        personal_account_page.wait_personal_profile_page()
 
         current_url = driver.current_url
         assert current_url == Urls.PERSONAL_ACCOUNT_PROFILE_PAGE
@@ -25,9 +24,7 @@ class TestPersonalAccount:
         personal_account_page.add_password()
         personal_account_page.click_to_login_button()
         personal_account_page.click_to_personal_account()
-        personal_account_page.wait_personal_profile_page()
         personal_account_page.click_to_order_history_button()
-        personal_account_page.wait_order_history_page()
 
         current_url = driver.current_url
         assert current_url == Urls.ORDER_HISTORY_PAGE
@@ -40,9 +37,7 @@ class TestPersonalAccount:
         personal_account_page.add_password()
         personal_account_page.click_to_login_button()
         personal_account_page.click_to_personal_account()
-        personal_account_page.wait_personal_profile_page()
         personal_account_page.click_to_logout_button()
-        personal_account_page.wait_login_page()
 
         current_url = driver.current_url
         assert current_url == Urls.LOGIN_PAGE

@@ -10,7 +10,6 @@ class TestPasswordRecovery:
         password_recovery_page = PasswordRecoveryPage(driver)
         password_recovery_page.click_on_login_to_account()
         password_recovery_page.click_on_restore_password()
-        password_recovery_page.wait_for_forgot_page()
 
         current_url = driver.current_url
         assert current_url == Urls.FORGOT_PASSWORD_PAGE, f"Expected URL to be '{Urls.FORGOT_PASSWORD_PAGE}' but got {current_url}"
@@ -20,10 +19,8 @@ class TestPasswordRecovery:
         password_recovery_page = PasswordRecoveryPage(driver)
         password_recovery_page.click_on_login_to_account()
         password_recovery_page.click_on_restore_password()
-        password_recovery_page.wait_for_forgot_page()
         password_recovery_page.add_email()
         password_recovery_page.click_on_restore_button()
-        password_recovery_page.wait_reset_password_page()
 
         current_url = driver.current_url
         assert current_url == Urls.RESET_PASSWORD_PAGE, f"Expected URL to be '{Urls.RESET_PASSWORD_PAGE}' but got {current_url}"
@@ -33,10 +30,8 @@ class TestPasswordRecovery:
         password_recovery_page = PasswordRecoveryPage(driver)
         password_recovery_page.click_on_login_to_account()
         password_recovery_page.click_on_restore_password()
-        password_recovery_page.wait_for_forgot_page()
         password_recovery_page.add_email()
         password_recovery_page.click_on_restore_button()
-        password_recovery_page.wait_reset_password_page()
         password_recovery_page.add_password_on_reset_page()
         password_recovery_page.click_to_show_hide_button()
 
